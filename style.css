@@ -1,0 +1,178 @@
+@import "node_modules/normalize.css/normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+:root {
+    --background: #1d2021;
+    --foreground: #ebdbb2;
+
+    /* Black + DarkGrey */
+    --color0: #282828;
+    --color8: #928374;
+
+    /* DarkRed + Red */
+    --color1: #cc241d;
+    --color9: #fb4934;
+
+    /* DarkGreen + Green */
+    --color2: #98971a;
+    --color10: #b8bb26;
+
+    /* DarkYellow + Yellow */
+    --color3: #d79921;
+    --color11: #fabd2f;
+
+    /* DarkBlue + Blue */
+    --color4: #458588;
+    --color12: #83a598;
+
+    /* DarkMagenta + Magenta */
+    --color5: #b16286;
+    --color13: #d3869b;
+
+    /* DarkCyan + Cyan */
+    --color6: #689d6a;
+    --color14: #8ec07c;
+
+    /* LightGrey + White */
+    --color7: #a89984;
+    --color15: #ebdbb2;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Source Code Pro', monospace;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#banner {
+    height: 4px;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-image: linear-gradient(left,
+        /*RED*/ var(--color1) 0%, var(--color1) 18%,
+        /*ORANGE*/ var(--color9) 18%, var(--color9) 33%,
+        /*YELLOW*/ var(--color3) 33%, var(--color3) 50%,
+        /*GREEN*/ var(--color2) 50%, var(--color2) 66%,
+        /*BLUE*/ var(--color4) 66%, var(--color4) 83%,
+        /*PURPLE*/ var(--color5) 83%, var(--color5) 100%);
+}
+
+#container {
+    width: 50%;
+    min-height: 300px;
+    padding: 5px;
+    border: 5px solid var(--color8);
+    background-color: #282828;
+}
+
+.output {
+    display: flex;
+    justify-content: space-between;
+}
+
+.output * {
+    flex-grow: 1;
+}
+
+a {
+    color: var(--foreground);
+}
+
+ul {
+    list-style: none;
+    margin: 18px 0;
+    padding: 0;
+}
+
+#search {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+#search input {
+    background-color: transparent;
+    border: none;
+    color: var(--foreground);
+    font-family: inherit;
+    font-size: inherit;
+    width: 90%;
+    margin-left: 9px;
+}
+
+#search input:focus {
+    outline: none;
+}
+
+.black {
+    color: var(--color0);
+}
+
+.dark_grey {
+    color: var(--color8);
+}
+
+.dark_red {
+    color: var(--color1);
+}
+
+.red {
+    color: var(--color9);
+}
+
+.dark_green {
+    color: var(--color2);
+}
+
+.green {
+    color: var(--color10);
+}
+
+.dark_yellow {
+    color: var(--color3);
+}
+
+.yellow {
+    color: var(--color11);
+}
+
+.dark_blue {
+    color: var(--color4);
+}
+
+.blue {
+    color: var(--color12);
+}
+
+.dark_magenta {
+    color: var(--color5);
+}
+
+.magenta {
+    color: var(--color13);
+}
+
+.dark_cyan {
+    color: var(--color6);
+}
+
+.cyan {
+    color: var(--color14);
+}
+
+.light_grey {
+    color: var(--color7);
+}
+
+.white {
+    color: var(--color15);
+}
