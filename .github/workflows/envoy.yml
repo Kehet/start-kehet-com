@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - master
-  
+
 permissions:
   contents: read
 
@@ -17,23 +17,30 @@ jobs:
   deploy:
     if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-20.04
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
           path: ~/.composer/cache/files
           key: dependencies-composer-${{ hashFiles('composer.json') }}
-          
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.1
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
           coverage: none
+        env:
+          DEPLOY_SERVER: ${{ vars.DEPLOY_SERVER }}
+          DEPLOY_REPOSITORY: ${{ vars.DEPLOY_REPOSITORY }}
+          DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
+          DEPLOY_TELEGRAM_BOT: ${{ secrets.DEPLOY_TELEGRAM_BOT }}
+          DEPLOY_TELEGRAM_CHAT: ${{ secrets.DEPLOY_TELEGRAM_CHAT }}
+          DEPLOY_HEALTH_CHECK: ${{ vars.DEPLOY_HEALTH_CHECK }}
 
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-interaction --no-suggest
@@ -42,7 +49,7 @@ jobs:
         run: ./vendor/bin/envoy run deploy_cleanup
         env:
           DEPLOY_SERVER: ${{ vars.DEPLOY_SERVER }}
-          DEPLOY_REPOSITORY: ${{ vars.DEPLOY_SERVER }}
+          DEPLOY_REPOSITORY: ${{ vars.DEPLOY_REPOSITORY }}
           DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
           DEPLOY_TELEGRAM_BOT: ${{ secrets.DEPLOY_TELEGRAM_BOT }}
           DEPLOY_TELEGRAM_CHAT: ${{ secrets.DEPLOY_TELEGRAM_CHAT }}
