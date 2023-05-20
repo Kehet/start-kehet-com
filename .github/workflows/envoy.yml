@@ -22,11 +22,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Cache dependencies
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache composer dependencies
         uses: actions/cache@v3
         with:
-          path: ~/.composer/cache/files
-          key: dependencies-composer-${{ hashFiles('composer.json') }}
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -34,23 +39,17 @@ jobs:
           php-version: 8.1
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
           coverage: none
-        env:
-          DEPLOY_SERVER: ${{ vars.DEPLOY_SERVER }}
-          DEPLOY_REPOSITORY: ${{ vars.DEPLOY_REPOSITORY }}
-          DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
-          DEPLOY_TELEGRAM_BOT: ${{ secrets.DEPLOY_TELEGRAM_BOT }}
-          DEPLOY_TELEGRAM_CHAT: ${{ secrets.DEPLOY_TELEGRAM_CHAT }}
-          DEPLOY_HEALTH_CHECK: ${{ vars.DEPLOY_HEALTH_CHECK }}
 
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-interaction --no-suggest
 
       - name: Deploy
-        run: ./vendor/bin/envoy run deploy_cleanup
+        #run: ./vendor/bin/envoy run deploy_cleanup
+        run: php -i
         env:
-          DEPLOY_SERVER: ${{ vars.DEPLOY_SERVER }}
-          DEPLOY_REPOSITORY: ${{ vars.DEPLOY_REPOSITORY }}
-          DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
-          DEPLOY_TELEGRAM_BOT: ${{ secrets.DEPLOY_TELEGRAM_BOT }}
-          DEPLOY_TELEGRAM_CHAT: ${{ secrets.DEPLOY_TELEGRAM_CHAT }}
-          DEPLOY_HEALTH_CHECK: ${{ vars.DEPLOY_HEALTH_CHECK }}
+          DEPLOY_SERVER: "${{ vars.DEPLOY_SERVER }}"
+          DEPLOY_REPOSITORY: "${{ vars.DEPLOY_REPOSITORY }}"
+          DEPLOY_PATH: "${{ vars.DEPLOY_PATH }}"
+          DEPLOY_TELEGRAM_BOT: "${{ secrets.DEPLOY_TELEGRAM_BOT }}"
+          DEPLOY_TELEGRAM_CHAT: "${{ secrets.DEPLOY_TELEGRAM_CHAT }}"
+          DEPLOY_HEALTH_CHECK: "${{ vars.DEPLOY_HEALTH_CHECK }}"
