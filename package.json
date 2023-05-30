@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^4.3.8"
+    "vite": "^4.3.9"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
