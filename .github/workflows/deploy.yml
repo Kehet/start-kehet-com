@@ -69,6 +69,9 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=latest
+            type:raw,value=${{ steps.title.outputs.pr_title }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -76,7 +79,7 @@ jobs:
           context: ./
           file: docker/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}, ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest, ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.title.outputs.pr_title }}
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Create a GitHub release
