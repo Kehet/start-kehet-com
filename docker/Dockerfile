@@ -7,6 +7,8 @@ RUN npm install && npm run build
 
 FROM nginx:stable-alpine as serve
 
+LABEL maintainer=""
+
 COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80
