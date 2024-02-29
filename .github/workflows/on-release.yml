@@ -2,8 +2,7 @@ name: Release Notification
 
 on:
   release:
-    types:
-      - created
+    types: [published]
 
 jobs:
   notify-on-release:
