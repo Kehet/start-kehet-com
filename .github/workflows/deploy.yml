@@ -76,7 +76,7 @@ jobs:
           context: ./
           file: docker/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}, latest, ${{ steps.title.outputs.pr_title }}
+          tags: ${{ steps.meta.outputs.tags }}, ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest, ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.title.outputs.pr_title }}
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Create a GitHub release
