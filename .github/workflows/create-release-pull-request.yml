@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - develop
+      - release-candidate
 
 permissions:
   contents: write
@@ -22,10 +22,10 @@ jobs:
           ref: master
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Reset develop branch on runner
+      - name: Reset promotion branch
         run: |
-          git fetch origin develop:develop
-          git reset --hard develop
+          git fetch origin release-candidate:release-candidate
+          git reset --hard release-candidate
 
       - name: Build Changelog since the latest tag
         id: build_changelog
@@ -45,11 +45,12 @@ jobs:
         run: |
           DATE=$(date +%Y-%m-%d)
           SEPERATOR="-"
-          for LETTER in {a..z}; do if [[ "$DATE$SEPARATOR$LETTER" > "${{ steps.build_changelog.outputs.latest_tag }}" ]]; then echo "pr_title=$DATE$SEPARATOR$LETTER" >> $GITHUB_OUTPUT && break; fi; done
+          for LETTER in {a..z}; do if [[ "$DATE$SEPARATOR$LETTER" != "${{ steps.build_changelog.outputs.latest_tag }}" ]]; then echo "pr_title=$DATE$SEPARATOR$LETTER" >> $GITHUB_OUTPUT && break; fi; done
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: release-candidate
           title: Release ${{ steps.title.outputs.pr_title }}
           body: ${{ steps.build_changelog.outputs.changelog }}
