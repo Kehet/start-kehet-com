@@ -39,6 +39,11 @@ jobs:
           git status
           git rebase master
           git push --force-with-lease
+          git checkout release-candidate
+          git pull
+          git status
+          git rebase master
+          git push --force-with-lease
           git status
           git checkout master
 
