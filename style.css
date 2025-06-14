@@ -50,18 +50,19 @@ body {
 
 
 #banner {
-    height: 4px;
+    height: 14px;
     background-size: 100% 100%;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 10;
-    background-image: linear-gradient(left,
+    background-image: linear-gradient(to right,
         /*RED*/ var(--color1) 0%, var(--color1) 18%,
         /*ORANGE*/ var(--color9) 18%, var(--color9) 33%,
         /*YELLOW*/ var(--color3) 33%, var(--color3) 50%,
         /*GREEN*/ var(--color2) 50%, var(--color2) 66%,
+        /*CYAN*/ var(--color6) 50%, var(--color6) 66%,
         /*BLUE*/ var(--color4) 66%, var(--color4) 83%,
         /*PURPLE*/ var(--color5) 83%, var(--color5) 100%);
 }
