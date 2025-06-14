@@ -20,6 +20,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: master
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Reset release-candidate branch on runner
         run: |
@@ -47,11 +51,9 @@ jobs:
           for LETTER in {a..z}; do if [[ "$DATE$SEPARATOR$LETTER" > "${{ steps.build_changelog.outputs.latest_tag }}" ]]; then echo "pr_title=$DATE$SEPARATOR$LETTER" >> $GITHUB_OUTPUT && break; fi; done
 
       - name: Create Pull Request
-        run: |
-          echo "Creating a new pull request..."
-          gh pr create \
-            --title "RC -> Main ${{ steps.title.outputs.pr_title }}" \
-            --body "${{ steps.build_changelog.outputs.changelog }}" \
-            --base "master" \
-            --head "release-candidate" \
-            --repo "${{ github.repository }}"
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: release-candidate
+          title: Release ${{ steps.title.outputs.pr_title }}
+          body: ${{ steps.build_changelog.outputs.changelog }}
