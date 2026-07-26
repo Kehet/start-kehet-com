@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/Kehet/start-kehet-com/compare/v0.2.0...v0.2.1) (2026-07-25)
+
+
+### Dependencies
+
+* **deps:** update nginxinc/nginx-unprivileged docker tag to v1.31 ([#266](https://github.com/Kehet/start-kehet-com/issues/266)) ([b4bce0f](https://github.com/Kehet/start-kehet-com/commit/b4bce0f0d370ec7dfa78604d872035fe7869dc52))
+
 ## [0.2.0](https://github.com/Kehet/start-kehet-com/compare/v0.1.3...v0.2.0) (2026-07-20)
 
 
