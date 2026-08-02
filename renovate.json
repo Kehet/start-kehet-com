@@ -9,5 +9,12 @@
   "minimumReleaseAge": "3 days",
   "semanticCommits": "enabled",
   "semanticCommitType": "chore",
-  "semanticCommitScope": "deps"
+  "semanticCommitScope": "deps",
+  "packageRules": [
+    {
+      "description": "Digest updates have no release age to wait on",
+      "matchUpdateTypes": ["digest", "pinDigest"],
+      "minimumReleaseAge": null
+    }
+  ]
 }
