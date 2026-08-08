@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/Kehet/start-kehet-com/compare/v0.2.3...v0.2.4) (2026-08-08)
+
+
+### Dependencies
+
+* **deps:** update nginxinc/nginx-unprivileged:1.31-alpine docker digest to a6c3ec0 ([#273](https://github.com/Kehet/start-kehet-com/issues/273)) ([a59d193](https://github.com/Kehet/start-kehet-com/commit/a59d193ce4dd76abc8138edbf1194d5a22308ad6))
+
 ## [0.2.3](https://github.com/Kehet/start-kehet-com/compare/v0.2.2...v0.2.3) (2026-08-02)
 
 
