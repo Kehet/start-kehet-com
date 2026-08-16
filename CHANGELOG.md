@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.5](https://github.com/Kehet/start-kehet-com/compare/v0.2.4...v0.2.5) (2026-08-16)
+
+
+### Dependencies
+
+* **deps:** update dependency vite to v8.2.1 ([#275](https://github.com/Kehet/start-kehet-com/issues/275)) ([ad37d68](https://github.com/Kehet/start-kehet-com/commit/ad37d686d703635968bfde97bb1694ee7498af41))
+* **deps:** update nginxinc/nginx-unprivileged:1.31-alpine docker digest to 334d929 ([#276](https://github.com/Kehet/start-kehet-com/issues/276)) ([4e03849](https://github.com/Kehet/start-kehet-com/commit/4e038491ada67875057ad01af6224387ab2207b5))
+
 ## [0.2.4](https://github.com/Kehet/start-kehet-com/compare/v0.2.3...v0.2.4) (2026-08-08)
 
 
