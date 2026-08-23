@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.7](https://github.com/Kehet/start-kehet-com/compare/v0.2.6...v0.2.7) (2026-08-23)
+
+
+### Dependencies
+
+* **deps:** update dependency vite to v8.2.2 ([#280](https://github.com/Kehet/start-kehet-com/issues/280)) ([cc8c8f3](https://github.com/Kehet/start-kehet-com/commit/cc8c8f3723a2e24992405fbac3bf1422529e18cb))
+
 ## [0.2.6](https://github.com/Kehet/start-kehet-com/compare/v0.2.5...v0.2.6) (2026-08-22)
 
 
