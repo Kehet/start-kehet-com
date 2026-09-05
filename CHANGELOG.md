@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.9](https://github.com/Kehet/start-kehet-com/compare/v0.2.8...v0.2.9) (2026-09-05)
+
+
+### Dependencies
+
+* **deps:** update actions/deploy-pages action to v5.0.1 ([#285](https://github.com/Kehet/start-kehet-com/issues/285)) ([9eeff91](https://github.com/Kehet/start-kehet-com/commit/9eeff913447056984414218b93ea5e2e7f5c3ebd))
+* **deps:** update nginxinc/nginx-unprivileged:1.31-alpine docker digest to aa8c908 ([#284](https://github.com/Kehet/start-kehet-com/issues/284)) ([aa000f4](https://github.com/Kehet/start-kehet-com/commit/aa000f4dfa891aa18f7752a448a56b604dc9cb0e))
+
 ## [0.2.8](https://github.com/Kehet/start-kehet-com/compare/v0.2.7...v0.2.8) (2026-08-30)
 
 
