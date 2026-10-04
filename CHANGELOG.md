@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.0](https://github.com/Kehet/start-kehet-com/compare/v0.2.14...v0.3.0) (2026-10-04)
+
+
+### Features
+
+* **links:** add 192.168.1.100:4567 to lab column ([#299](https://github.com/Kehet/start-kehet-com/issues/299)) ([5f61b73](https://github.com/Kehet/start-kehet-com/commit/5f61b734956e6b1a13f0da5484189cf783911ce6))
+
+
+### Dependencies
+
+* **deps:** update dependency vite to v8.3.2 ([#298](https://github.com/Kehet/start-kehet-com/issues/298)) ([bff4396](https://github.com/Kehet/start-kehet-com/commit/bff43963ffd8dbf72b955213d8b6b4968bb0903c))
+* **deps:** update nginxinc/nginx-unprivileged:1.31-alpine docker digest to 26b0bf6 ([#297](https://github.com/Kehet/start-kehet-com/issues/297)) ([e838903](https://github.com/Kehet/start-kehet-com/commit/e838903aad9b56ec6ecbfa66744daa22e7f95687))
+
 ## [0.2.14](https://github.com/Kehet/start-kehet-com/compare/v0.2.13...v0.2.14) (2026-09-30)
 
 
