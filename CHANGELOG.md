@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/Kehet/start-kehet-com/compare/v0.3.0...v0.4.0) (2026-10-06)
+
+
+### Features
+
+* **links:** add forgejo to lab column ([#301](https://github.com/Kehet/start-kehet-com/issues/301)) ([5dd589a](https://github.com/Kehet/start-kehet-com/commit/5dd589aefe10e96f9e32fc85c0059873064468fd))
+
 ## [0.3.0](https://github.com/Kehet/start-kehet-com/compare/v0.2.14...v0.3.0) (2026-10-04)
 
 
