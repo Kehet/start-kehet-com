@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.0](https://github.com/Kehet/start-kehet-com/compare/v0.4.1...v0.5.0) (2026-10-12)
+
+
+### Features
+
+* **links:** add 192.168.1.100:8000 to lab column ([#309](https://github.com/Kehet/start-kehet-com/issues/309)) ([3171b08](https://github.com/Kehet/start-kehet-com/commit/3171b0830d7305953c35fb29652cc5f77044dff0))
+
+
+### Dependencies
+
+* **deps:** update actions/setup-node action to v7.1.0 ([#306](https://github.com/Kehet/start-kehet-com/issues/306)) ([e37a06a](https://github.com/Kehet/start-kehet-com/commit/e37a06a72ea1a48521efecbce84fad38ca4dd60c))
+* **deps:** update dependency vite to v8.3.4 ([#307](https://github.com/Kehet/start-kehet-com/issues/307)) ([4070dfa](https://github.com/Kehet/start-kehet-com/commit/4070dfaa9cefbcc339ec49e5349daceb224426db))
+
 ## [0.4.1](https://github.com/Kehet/start-kehet-com/compare/v0.4.0...v0.4.1) (2026-10-10)
 
 
