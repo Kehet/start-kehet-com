@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.3](https://github.com/Kehet/start-kehet-com/compare/v0.5.2...v0.5.3) (2026-11-14)
+
+
+### Dependencies
+
+* **deps:** update amannn/action-semantic-pull-request action to v6.1.2 ([#317](https://github.com/Kehet/start-kehet-com/issues/317)) ([517177b](https://github.com/Kehet/start-kehet-com/commit/517177b7abfaef1070b44a89950d8fb92da72123))
+* **deps:** update dependency vite to v8.3.8 ([#318](https://github.com/Kehet/start-kehet-com/issues/318)) ([9573114](https://github.com/Kehet/start-kehet-com/commit/957311415d3f64d71fd7a3d7cf788d751ef85f2e))
+
 ## [0.5.2](https://github.com/Kehet/start-kehet-com/compare/v0.5.1...v0.5.2) (2026-10-25)
 
 
