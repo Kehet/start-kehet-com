@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.4](https://github.com/Kehet/start-kehet-com/compare/v0.5.3...v0.5.4) (2026-11-21)
+
+
+### Dependencies
+
+* **deps:** update actions/create-github-app-token action to v3.4.0 ([#320](https://github.com/Kehet/start-kehet-com/issues/320)) ([38fae43](https://github.com/Kehet/start-kehet-com/commit/38fae43e49278b6856099884185ed88683b58128))
+
 ## [0.5.3](https://github.com/Kehet/start-kehet-com/compare/v0.5.2...v0.5.3) (2026-11-14)
 
 
