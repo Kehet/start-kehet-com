@@ -1,20 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "timezone": "Europe/Helsinki",
-  "schedule": ["every weekend"],
-  "prHourlyLimit": 0,
-  "prConcurrentLimit": 10,
-  "labels": ["dependencies"],
-  "minimumReleaseAge": "3 days",
-  "semanticCommits": "enabled",
-  "semanticCommitType": "chore",
-  "semanticCommitScope": "deps",
-  "packageRules": [
-    {
-      "description": "Digest updates have no release age to wait on",
-      "matchUpdateTypes": ["digest", "pinDigest"],
-      "minimumReleaseAge": null
-    }
+  "extends": [
+    "github>Kehet/renovate-config"
   ]
 }
